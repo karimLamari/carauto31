@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Car Auto 31 Montrabé</title>
+    <meta name="description" content="Contactez Car Auto 31 à Montrabé pour vos réparations automobiles. 40 allée du terlon 31850 Montrabé">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Car Auto <span>31</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="burger-menu">☰</div>
+        </nav>
+    </header>
+
+    <!-- Menu mobile overlay -->
+    <div class="nav-mobile" id="navMobile">
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <section class="contact-section">
+        <h2>Contactez-nous</h2>
+        <div class="contact-form-container">
+            <form id="contact-form" action="https://formsubmit.co/31carauto@gmail.com" method="POST">
+                <div class="form-group">
+                    <label for="name">Nom complet *</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
+                    <span class="error-message" id="name-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="01 23 45 67 89">
+                    <span class="error-message" id="phone-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Type de prestation</label>
+                    <select id="service" name="service">
+                        <option value="">Sélectionnez une prestation</option>
+                        <option value="mecanique">Mécanique générale</option>
+                        <option value="entretien">Entretien & Révision</option>
+                        <option value="diagnostic">Diagnostic électronique</option>
+                        <option value="carrosserie">Carrosserie & Peinture</option>
+                        <option value="pneumatiques">Pneumatiques</option>
+                        <option value="freinage">Freinage</option>
+                        <option value="climatisation">Climatisation</option>
+                        <option value="controle-technique">Contrôle technique</option>
+                        <option value="depannage">Dépannage</option>
+                        <option value="devis">Demande de devis</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="urgency">Urgence</label>
+                    <select id="urgency" name="urgency">
+                        <option value="normal">Normal</option>
+                        <option value="urgent">Urgent (24-48h)</option>
+                        <option value="très-urgent">Très urgent (même jour)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Décrivez votre problème ou votre demande..." required rows="5"></textarea>
+                    <span class="error-message" id="message-error"></span>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent">J'accepte que mes données soient utilisées pour me recontacter dans le cadre de ma demande *</label>
+                    <span class="error-message" id="consent-error"></span>
+                </div>
+                
+                <button type="submit" class="cta-button">Envoyer ma demande</button>
+            </form>
+            
+            <div id="form-success" class="success-message" style="display: none;">
+                <h3>✅ Message envoyé avec succès !</h3>
+                <p>Nous vous recontacterons dans les plus brefs délais.</p>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h3>Coordonnées</h3>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-content">
+                        <strong>Téléphone</strong>
+                        <span class="phone-placeholder">[Numéro à ajouter]</span>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-content">
+                        <strong>Email</strong>
+                        <a href="mailto:31carauto@gmail.com">31carauto@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-content">
+                        <strong>Adresse</strong>
+                        <span>40 allée du terlon, 31850 Montrabé</span>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🕒</div>
+                    <div class="contact-content">
+                        <strong>Horaires</strong>
+                        <span>Lundi au vendredi : 9h - 18h</span>
+                        <span>Samedi et dimanche : Fermé</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Google Maps -->
+        <div class="map-container">
+            <h3>Nous localiser</h3>
+            <div class="map-wrapper">
+                <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.1442021211433!2d1.5120854776214363!3d43.64516807110256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aea30045b93015%3A0xbff2cc118d35b801!2sGarage%20auto%20Rico!5e0!3m2!1sfr!2sfr!4v1752504064921!5m2!1sfr!2sfr"
+                width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <p class="map-note">
+                <strong>Accès :</strong> Parking gratuit disponible devant le garage. 
+                Accessible en transport en commun (ligne 38, arrêt Montrabé Centre).
+            </p>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><strong>Car Auto 31</strong></p>
+                <p>40 allée du terlon, 31850 Montrabé</p>
+                <p>Email: 31carauto@gmail.com</p>
+                <p>Horaires: Lundi au vendredi de 9h à 18h</p>
+            </div>
+            <div class="footer-legal">
+                <p>SIRET: 980 418 552 00017</p>
+                <p>© 2024 Car Auto 31. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
