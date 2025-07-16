@@ -34,7 +34,7 @@
     <section class="contact-section">
         <h2>Contactez-nous</h2>
         <div class="contact-form-container">
-            <form id="contact-form" action="https://formsubmit.co/31carauto@gmail.com" method="POST">
+            <form id="contact-form">
                 <div class="form-group">
                     <label for="name">Nom complet *</label>
                     <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
@@ -92,7 +92,7 @@
                     <span class="error-message" id="consent-error"></span>
                 </div>
                 
-                <button type="submit" class="cta-button">Envoyer ma demande</button>
+                <button type="button" onclick="sendEmail()" class="cta-button">Envoyer ma demande</button>
             </form>
             
             <div id="form-success" class="success-message" style="display: none;">
@@ -108,7 +108,7 @@
                     <div class="contact-icon">📞</div>
                     <div class="contact-content">
                         <strong>Téléphone</strong>
-                        <span class="phone-placeholder">[Numéro à ajouter]</span>
+                        <span class="phone-placeholder">05 64 72 13 52</span>
                     </div>
                 </div>
                 
@@ -175,5 +175,43 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        function sendEmail() {
+            // Récupération des valeurs du formulaire
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var service = document.getElementById('service').value;
+            var urgency = document.getElementById('urgency').value;
+            var message = document.getElementById('message').value;
+            var consent = document.getElementById('consent').checked;
+
+            // Vérification des champs obligatoires
+            if (!name || !email || !message || !consent) {
+                alert('Veuillez remplir tous les champs obligatoires et accepter le consentement.');
+                return;
+            }
+
+            // Construction du sujet
+            var subject = "Demande de contact - " + (service ? service : "Général");
+
+            // Construction du corps du message
+            var body = "Bonjour,\n\n";
+            body += "Voici les informations de ma demande :\n\n";
+            body += "Nom : " + name + "\n";
+            body += "Email : " + email + "\n";
+            if (phone) body += "Téléphone : " + phone + "\n";
+            if (service) body += "Type de prestation : " + service + "\n";
+            if (urgency) body += "Urgence : " + urgency + "\n";
+            body += "\nMessage :\n" + message + "\n\n";
+            body += "Cordialement,\n" + name;
+
+            // Construction du lien mailto
+            var mailtoLink = "mailto:31carauto@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+            
+            // Ouverture du client email
+            window.location.href = mailtoLink;
+        }
+    </script>
 </body>
 </html>
